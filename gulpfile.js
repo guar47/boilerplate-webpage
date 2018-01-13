@@ -6,8 +6,13 @@ const paths = {
   html: ['*.html'],
   css: 'css',
   sass: ['css/*.scss'],
-  js: ['js/script.js'],
+  js: ['js/main.js'],
 };
+
+function onError(err) {
+  console.log(err);
+  this.emit('end');
+}
 
 gulp.task('js', () => gulp.src(paths.js)
   .pipe(browserSync.stream()));
@@ -17,6 +22,7 @@ gulp.task('html', () => gulp.src(paths.html)
 
 gulp.task('sass', () => gulp.src(paths.sass)
   .pipe(sass())
+  .on('error', onError)
   .pipe(gulp.dest(paths.css))
   .pipe(browserSync.stream()));
 
