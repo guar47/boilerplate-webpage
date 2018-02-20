@@ -14,17 +14,18 @@ function onError(err) {
   this.emit('end');
 }
 
-gulp.task('js', () => gulp.src(paths.js)
-  .pipe(browserSync.stream()));
+gulp.task('js', () => gulp.src(paths.js).pipe(browserSync.stream()));
 
-gulp.task('html', () => gulp.src(paths.html)
-  .pipe(browserSync.stream()));
+gulp.task('html', () => gulp.src(paths.html).pipe(browserSync.stream()));
 
-gulp.task('sass', () => gulp.src(paths.sass)
-  .pipe(sass())
-  .on('error', onError)
-  .pipe(gulp.dest(paths.css))
-  .pipe(browserSync.stream()));
+gulp.task('sass', () =>
+  gulp
+    .src(paths.sass)
+    .pipe(sass())
+    .on('error', onError)
+    .pipe(gulp.dest(paths.css))
+    .pipe(browserSync.stream()),
+);
 
 gulp.task('serve', ['sass', 'html', 'js'], () => {
   browserSync.init({
