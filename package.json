@@ -1,18 +1,25 @@
 {
   "name": "boilerplate",
-  "version": "0.0.1",
-  "description": "boilerplate for webpages with sass, gulp and brower-sync",
-  "main": "",
-  "author": "Dmitrii Pashutskii",
-  "license": "ISC",
+  "version": "2.0.0",
+  "description": "Boilerplate for web pages with sass, babel and parcel. Ready for usage.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/guar47/boilerplate_webpage.git"
   },
+  "keywords": [],
+  "author": "Dmitrii Pashutskii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guar47/boilerplate_webpage/issues"
+  },
+  "homepage": "https://github.com/guar47/boilerplate_webpage#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.13",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0"
-  },
-  "dependencies": {}
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "node-sass": "^4.7.2"
+  }
 }
